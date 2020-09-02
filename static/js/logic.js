@@ -76,12 +76,12 @@ function createFeatures(earthquakeData) {
       var colors = ["#CCFFCC", "#99CC00", "#FFCC00", "#FF9900", "#FF6600", "#993300"];
       var labels = [];
 
-      var legendData = "<h2>Earthquake Magnitude</h2><div class=\"labels\"></div>";
+      var legendData = "<h2>Earthquake Magnitude</h2>" + "<div class=\"labels\">" + "<div class=\"min\">" + limits[0] + "</div>" + "<div class=\"max\">" + limits[limits.length - 1] + "</div>" + "</div>";
 
       div.innerHTML = legendData;
 
       limits.forEach(function(limit, index) {
-          labels.push(`<li style="background-color: ${colors[index]} ">${limits[index]}</li>`);
+          labels.push("<li style=\"background-color: " + colors[index] + "\"></li>");
       });
 
       div.innerHTML += "<ul>" + labels.join("") + "</ul>";
